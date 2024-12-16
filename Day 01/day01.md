@@ -2,6 +2,8 @@
 
 Welcome to Day 1 of the Advent of CSS! 🎉
 
+Website: [Challenge # 1](https://store.selfteach.me/view/courses/advent-of-css-2024/2872726-challenge-1-photo-gallery-card/9303166-challenge-1)
+
 ## Overview
 
 For today's challenge, we'll build a photo gallery card component similar to Facebook's feed implementation. The key challenge is creating a "smart" grid system that can handle different numbers of photos elegantly, from a single photo up to 21+ images.
