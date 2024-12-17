@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tooltip Challenge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen flex items-center justify-center bg-gray-100">
+    <div class="relative inline-block group">
+      <button
+        class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+      >
+        Hover Me
+      </button>
+      <div
+        class="absolute invisible opacity-0 group-hover:visible group-hover:opacity-100 bottom-full left-1/2 -translate-x-1/2 mb-2 px-4 py-2 bg-gray-800 text-white text-sm rounded-lg whitespace-nowrap transition-opacity duration-300"
+      >
+        This is a tooltip message!
+        <div
+          class="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-gray-800"
+        ></div>
+      </div>
+    </div>
+  </body>
+</html>
