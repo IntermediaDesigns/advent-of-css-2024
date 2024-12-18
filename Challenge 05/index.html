@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .wrapper {
+        position: relative;
+        z-index: 2;
+        background: white;
+        min-height: 100vh;
+      }
+
+      .reveal-footer {
+        position: sticky; /* Changed from fixed to sticky */
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Main content wrapper -->
+    <div class="wrapper">
+      <main class="pb-48">
+        <!-- Header section -->
+        <header class="bg-blue-600 text-white p-4">
+          <h1 class="text-2xl font-bold">Scroll Reveal Footer Demo</h1>
+        </header>
+
+        <!-- Content sections to enable scrolling -->
+        <section class="p-6 space-y-4">
+          <h2 class="text-xl font-semibold">Main Content</h2>
+          <p>Scroll down to reveal the footer...</p>
+          <!-- Adding multiple paragraphs to create scrollable content -->
+          <div class="space-y-4">
+            <p class="bg-gray-100 p-4 rounded">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <p class="bg-gray-100 p-4 rounded">
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <p class="bg-gray-100 p-4 rounded">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.
+            </p>
+            <p class="bg-gray-100 p-4 rounded">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit anim id est laborum.
+            </p>
+            <p class="bg-gray-100 p-4 rounded">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium.
+            </p>
+            <p class="bg-gray-100 p-4 rounded">
+              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+              aut fugit, sed quia consequuntur.
+            </p>
+            <p class="bg-gray-100 p-4 rounded">
+              Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+              consectetur, adipisci velit.
+            </p>
+            <p class="bg-gray-100 p-4 rounded">
+              Ut enim ad minima veniam, quis nostrum exercitationem ullam
+              corporis suscipit laboriosam.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Footer that reveals on scroll -->
+    <footer class="reveal-footer bg-gray-800 text-white p-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="font-bold mb-4">About Us</h3>
+            <p class="text-gray-400">
+              A demo footer that reveals itself when you scroll down the page.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-bold mb-4">Quick Links</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li>Home</li>
+              <li>About</li>
+              <li>Services</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold mb-4">Contact</h3>
+            <p class="text-gray-400">Email: info@example.com</p>
+            <p class="text-gray-400">Phone: (123) 456-7890</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
