@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challenge #06</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+      body {
+        font-family: "Inter", sans-serif;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #000;
+        transform-origin: 0 50%;
+        transform: scaleX(var(--scroll-percent, 0));
+        z-index: 50;
+      }
+
+      @property --scroll-percent {
+        syntax: "<number>";
+        inherits: false;
+        initial-value: 0;
+      }
+
+      @keyframes scroll-progress {
+        to {
+          --scroll-percent: 1;
+        }
+      }
+
+      html {
+        animation: scroll-progress linear;
+        animation-timeline: scroll();
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white shadow-sm z-40">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <button class="text-xl font-bold">MENU</button>
+        <button class="text-xl">🔍</button>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="container mx-auto px-4 pt-24 pb-16 max-w-3xl">
+      <!-- Blog header -->
+      <header class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          THE MOST PRODUCTIVE CUSTOMIZATION I'VE MADE TO MY COMPUTER THIS YEAR
+        </h1>
+        <h2 class="text-xl md:text-2xl text-gray-600 mb-8">
+          EXPERIMENTING WITH THE HYPER KEY
+        </h2>
+        <div class="text-gray-500">PUBLISHED: JULY 12, 2021</div>
+      </header>
+
+      <!-- Blog content -->
+      <article class="prose lg:prose-lg mx-auto">
+        <p class="mb-6">
+          Candy cane jingle sleigh reindeer sparkle gingerbread. Holly wreath
+          cozy snowflake mistletoe frosty cheer stockings joy. Tinsel lights
+          evergreen cocoa yuletide twinkling carols glow. Snowman festive bells
+          chimney Santa Claus warm wishes. Icicles cookies Rudolph gift wrapping
+          merry elves. Deck the halls Noel laughter peppermint marshmallows
+          hearth. Nutcracker fireplace holly berry cocoa sleigh bells cheer.
+        </p>
+
+        <p class="mb-6">
+          Twinkling garland sugarplum stockings merry frosty glow. Snowflake
+          sparkle reindeer cozy mittens Santa Claus cheer. Candy cane wishes
+          holly wreath evergreen sleigh bells. Gingerbread elves cocoa
+          peppermint laughter twinkling lights. Mistletoe chimneys warm cocoa
+          carols bells Noel. Icicles glitter joy snowman marshmallows Christmas
+          tree. Deck the halls with tinsel, cheer, and nutcrackers galore.
+        </p>
+
+        <!-- Additional paragraphs omitted for brevity but would continue in the same style -->
+      </article>
+    </main>
+  </body>
+</html>
