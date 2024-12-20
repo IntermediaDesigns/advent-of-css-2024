@@ -5,91 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Challenge #06</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
-
-      body {
-        font-family: "Inter", sans-serif;
-        position: relative;
-      }
-
-      body::before {
-        content: "";
+      .progress-bar {
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 2px;
-        background: #000;
-        transform-origin: 0 50%;
-        transform: scaleX(var(--scroll-percent, 0));
-        z-index: 50;
+        right: 0;
+        height: 1rem;
+        background: linear-gradient(
+          to right,
+          #f8a4dc 0%,
+          #fb24c9 100%
+        );
+        transition: transform 0.3s ease-in-out;
+        transform-origin: 0%;
+        transform: scaleX(0);
       }
 
-      @property --scroll-percent {
-        syntax: "<number>";
-        inherits: false;
-        initial-value: 0;
+      /* This sets up the scroll-progress animation */
+      html {
+        scroll-behavior: smooth;
       }
 
-      @keyframes scroll-progress {
-        to {
-          --scroll-percent: 1;
+      /* The actual scroll animation */
+      @supports (-moz-appearance: none) {
+        .progress-bar {
+          transform-origin: 0%;
+          animation: progress linear;
+          animation-timeline: scroll();
         }
       }
 
-      html {
-        animation: scroll-progress linear;
-        animation-timeline: scroll();
+      @supports not (-moz-appearance: none) {
+        .progress-bar {
+          transform-origin: 0%;
+          animation: progress linear;
+          animation-timeline: scroll();
+        }
+      }
+
+      @keyframes progress {
+        0% {
+          transform: scaleX(0);
+        }
+        100% {
+          transform: scaleX(1);
+        }
       }
     </style>
   </head>
-  <body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white shadow-sm z-40">
-      <div
-        class="container mx-auto px-4 py-4 flex justify-between items-center"
-      >
-        <button class="text-xl font-bold">MENU</button>
-        <button class="text-xl">🔍</button>
+  <body class="min-h-screen bg-gray-50">
+    <!-- Scroll Progress Bar -->
+    <div class="progress-bar z-50"></div>
+
+    <!-- Content -->
+    <main class="container mx-auto px-4 py-8">
+      <h1 class="text-4xl font-bold mb-6">Pure CSS Scroll Indicator</h1>
+
+      <!-- Sample content to enable scrolling -->
+      <div class="space-y-6">
+        <p class="text-lg">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+
+        <div class="bg-blue-100 p-6 rounded-lg">
+          <h2 class="text-2xl font-semibold mb-4">Section 1</h2>
+          <p class="mb-4">Scroll down to see the indicator in action!</p>
+          <p>The blue bar at the top will grow as you scroll down.</p>
+        </div>
+
+        <p class="text-lg">
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          nisi ut aliquip ex ea commodo consequat.
+        </p>
+
+        <div class="bg-gray-100 p-6 rounded-lg">
+          <h2 class="text-2xl font-semibold mb-4">Section 2</h2>
+          <p class="text-lg">
+            Keep scrolling to test the progress indicator. It should move
+            smoothly as you scroll up and down.
+          </p>
+        </div>
+
+        <!-- More content for scrolling -->
+        <p class="text-lg">
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fugiat nulla pariatur.
+        </p>
+
+        <div class="bg-green-100 p-6 rounded-lg mb-6">
+          <h2 class="text-2xl font-semibold mb-4">Section 3</h2>
+          <p class="mb-4">The progress bar uses pure CSS with no JavaScript!</p>
+        </div>
+
+        <!-- Repeat sections to ensure enough scrollable content -->
+        <div class="space-y-6">
+          <p class="text-lg">
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum.
+          </p>
+
+          <div class="bg-yellow-100 p-6 rounded-lg">
+            <h2 class="text-2xl font-semibold mb-4">Section 4</h2>
+            <p>More content to ensure we have enough to scroll through...</p>
+          </div>
+
+          <p class="text-lg">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium.
+          </p>
+
+          <div class="bg-purple-100 p-6 rounded-lg">
+            <h2 class="text-2xl font-semibold mb-4">Section 5</h2>
+            <p>Almost at the bottom! Notice how the progress bar has grown.</p>
+          </div>
+
+          <p class="text-lg">
+            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+            fugit.
+          </p>
+
+          <div class="bg-red-100 p-6 rounded-lg">
+            <h2 class="text-2xl font-semibold mb-4">Final Section</h2>
+            <p>
+              You've reached the bottom! The progress bar should be complete.
+            </p>
+          </div>
+        </div>
       </div>
-    </nav>
-
-    <!-- Main content -->
-    <main class="container mx-auto px-4 pt-24 pb-16 max-w-3xl">
-      <!-- Blog header -->
-      <header class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-          THE MOST PRODUCTIVE CUSTOMIZATION I'VE MADE TO MY COMPUTER THIS YEAR
-        </h1>
-        <h2 class="text-xl md:text-2xl text-gray-600 mb-8">
-          EXPERIMENTING WITH THE HYPER KEY
-        </h2>
-        <div class="text-gray-500">PUBLISHED: JULY 12, 2021</div>
-      </header>
-
-      <!-- Blog content -->
-      <article class="prose lg:prose-lg mx-auto">
-        <p class="mb-6">
-          Candy cane jingle sleigh reindeer sparkle gingerbread. Holly wreath
-          cozy snowflake mistletoe frosty cheer stockings joy. Tinsel lights
-          evergreen cocoa yuletide twinkling carols glow. Snowman festive bells
-          chimney Santa Claus warm wishes. Icicles cookies Rudolph gift wrapping
-          merry elves. Deck the halls Noel laughter peppermint marshmallows
-          hearth. Nutcracker fireplace holly berry cocoa sleigh bells cheer.
-        </p>
-
-        <p class="mb-6">
-          Twinkling garland sugarplum stockings merry frosty glow. Snowflake
-          sparkle reindeer cozy mittens Santa Claus cheer. Candy cane wishes
-          holly wreath evergreen sleigh bells. Gingerbread elves cocoa
-          peppermint laughter twinkling lights. Mistletoe chimneys warm cocoa
-          carols bells Noel. Icicles glitter joy snowman marshmallows Christmas
-          tree. Deck the halls with tinsel, cheer, and nutcrackers galore.
-        </p>
-
-        <!-- Additional paragraphs omitted for brevity but would continue in the same style -->
-      </article>
     </main>
   </body>
 </html>
