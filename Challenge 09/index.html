@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gradient Border Button</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            backgroundImage: {
+              'gradient-border': 'linear-gradient(90deg, #F4BB44, #E0367C, #6762D2, #6ED3FA, #F4BB44)',
+            },
+            keyframes: {
+              'border-rotate': {
+                '0%': { backgroundPosition: '0% 50%' },
+                '100%': { backgroundPosition: '200% 50%' }
+              }
+            },
+            animation: {
+              'border-rotate': 'border-rotate 3s linear infinite'
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="h-screen flex items-center justify-center bg-black">
+    <!-- Button Container -->
+    <div class="relative group hover:scale-110 transition-transform duration-300">
+      <!-- Gradient Border -->
+      <div class="bg-gradient-border bg-[length:200%_auto] rounded-full p-[2px] transition-all duration-300 group-hover:animate-border-rotate">
+        <!-- Inner Button -->
+        <div class="px-8 py-2 bg-black rounded-full cursor-pointer">
+          <span class="text-white text-xl font-bold">CSS Rocks!</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
