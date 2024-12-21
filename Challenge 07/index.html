@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challenge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-purple-900 flex items-center justify-center">
+    <div
+      class="w-full max-w-md p-8 bg-purple-400/50 backdrop-blur-sm rounded-lg shadow-lg"
+    >
+      <h2 class="text-2xl font-bold mb-6 text-center">
+        Floating Label Example
+      </h2>
+
+      <div class="relative my-8">
+        <input
+          type="text"
+          id="name"
+          placeholder=" "
+          class="peer w-full h-12 px-3 py-2 bg-purple-200 border-2 border-purple-800 rounded-md outline-none transition-all duration-200 ease-in-out focus:border-purple-200 focus:ring-1 focus:ring-purple-200 text-black"
+        />
+        <label
+          for="name"
+          class="absolute left-3 top-3.5 px-1 text-black transition-all duration-200 ease-in-out peer-focus:-top-2 peer-focus:left-2 peer-focus:text-sm peer-focus:bg-purple-300 peer-focus:rounded-lg peer-focus:px-2 peer-focus:py-0.5 peer-focus:ring-1 peer-focus:ring-purple-800 peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:left-2 peer-[:not(:placeholder-shown)]:text-sm peer-[:not(:placeholder-shown)]:bg-purple-300 peer-[:not(:placeholder-shown)]:rounded-lg peer-[:not(:placeholder-shown)]:px-2 peer-[:not(:placeholder-shown)]:py-0.5 peer-[:not(:placeholder-shown)]:ring-1 peer-[:not(:placeholder-shown)]:ring-purple-800"
+        >
+          Full Name
+        </label>
+      </div>
+
+      <div class="relative my-8">
+        <input
+          type="email"
+          id="email"
+          placeholder=" "
+          class="peer w-full h-12 px-3 py-2 bg-purple-200 border-2 border-purple-800 rounded-md outline-none transition-all duration-200 ease-in-out focus:border-purple-200 focus:ring-1 focus:ring-purple-200 text-black"
+        />
+        <label
+          for="email"
+          class="absolute left-3 top-2.5 px-1 text-black transition-all duration-200 ease-in-out peer-focus:-top-2 peer-focus:left-2 peer-focus:text-sm peer-focus:bg-purple-300 peer-focus:rounded-lg peer-focus:px-2 peer-focus:py-0.5 peer-focus:ring-1 peer-focus:ring-purple-800 peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:left-2 peer-[:not(:placeholder-shown)]:text-sm peer-[:not(:placeholder-shown)]:bg-purple-300 peer-[:not(:placeholder-shown)]:rounded-lg peer-[:not(:placeholder-shown)]:px-2 peer-[:not(:placeholder-shown)]:py-0.5 peer-[:not(:placeholder-shown)]:ring-1 peer-[:not(:placeholder-shown)]:ring-purple-800"
+        >
+          Email Address
+        </label>
+      </div>
+    </div>
+  </body>
+</html>
