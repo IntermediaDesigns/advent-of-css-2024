@@ -13,6 +13,16 @@
         background-repeat: no-repeat;
         background-attachment: fixed;
       }
+
+      /* Add CSS for countdown timer */
+      #countdown {
+        display: none;
+      }
+
+      #countdown.active {
+        display: inline;
+        animation: countdown 1s linear forwards;
+      }
     </style>
   </head>
   <body class="min-h-screen p-8">
@@ -167,16 +177,27 @@
           </div>
         </div>
 
-        <!-- Success Message (initially hidden) -->
-        <div id="successMessage" class="hidden bg-green-100 text-green-700 p-4 rounded-md mb-4">
+        <!-- Success Message with Countdown (initially hidden) -->
+        <div
+          id="successMessage"
+          class="hidden bg-green-100 text-green-700 p-4 rounded-md mb-4 text-center"
+        >
           Form submitted successfully! 🎄
+          <br />
+          <span id="countdown" class="font-bold"></span>
+          <!-- Meta refresh will be inserted here on submit -->
+          <div id="refreshContainer"></div>
         </div>
 
         <!-- Submit Button -->
         <div>
           <button
             type="submit"
-            onclick="document.getElementById('successMessage').classList.remove('hidden')"
+            onclick="
+              document.getElementById('successMessage').classList.remove('hidden');
+              document.getElementById('countdown').classList.add('active');
+              document.getElementById('refreshContainer').innerHTML = '<meta http-equiv=\'refresh\' content=\'1\'>';
+            "
             class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
           >
             Submit
